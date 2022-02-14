@@ -980,6 +980,10 @@ h3 {
   .customize-theme .card {
     width: 75vw;
   }
+  
+  .scroll-down {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -1001,12 +1005,18 @@ h3 {
     padding-left: 35px;
     padding-bottom: 20px;
   }
-
+  
+  .interests .interest-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: var(--m-0-5) 0;
+  }
+  
   .project-item-in {
     margin: 0 auto;
     max-width: 480px;
   }
-
+  
   .customize-theme .card {
     width: 96vw;
   }
@@ -1016,5 +1026,9 @@ h3 {
   .fact-item {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  
+  .interests .interest-item {
+    padding: var(--m-0-75) var(--m-0-5);
   }
 }
