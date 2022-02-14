@@ -1009,7 +1009,7 @@ h3 {
   .interests .interest-item {
     flex: 0 0 100%;
     max-width: 100%;
-    padding: var(--m-0-5) 0;
+    padding: var(--m-0-75) var(--m-0-5);
   }
   
   .project-item-in {
