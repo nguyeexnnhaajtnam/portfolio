@@ -116,6 +116,7 @@ const root = document.querySelector(":root");
 const bG1 = document.querySelector(".background-1");
 const bG2 = document.querySelector(".background-2");
 const bG3 = document.querySelector(".background-3");
+const spanActiveBg = document.querySelectorAll(".choose-background span");
 
 // open modal
 const openThemeModal = () => {
@@ -197,6 +198,24 @@ const changeBg = () => {
   root.style.setProperty("--dark-color-lightness", darkColorLightness);
 };
 
+const activeBg = () => {
+  for (i = 0; i < spanActiveBg.length; i++) {
+    if (bG1.classList.contains("active")) {
+      spanActiveBg[0].classList.add("active");
+      spanActiveBg[1].classList.remove("active");
+      spanActiveBg[2].classList.remove("active");
+    } else if (bG2.classList.contains("active")) {
+      spanActiveBg[1].classList.add("active");
+      spanActiveBg[0].classList.remove("active");
+      spanActiveBg[2].classList.remove("active");
+    } else if (bG3.classList.contains("active")) {
+      spanActiveBg[2].classList.add("active");
+      spanActiveBg[1].classList.remove("active");
+      spanActiveBg[0].classList.remove("active");
+    }
+  }
+};
+
 bG1.addEventListener("click", () => {
   whiteColorLightness = "100%";
   lightColorLightness = "92%";
@@ -208,6 +227,7 @@ bG1.addEventListener("click", () => {
   bG2.classList.remove("active");
   bG3.classList.remove("active");
   changeBg();
+  activeBg();
 });
 
 bG2.addEventListener("click", () => {
@@ -221,6 +241,7 @@ bG2.addEventListener("click", () => {
   bG1.classList.remove("active");
   bG3.classList.remove("active");
   changeBg();
+  activeBg();
 });
 
 bG3.addEventListener("click", () => {
@@ -234,4 +255,5 @@ bG3.addEventListener("click", () => {
   bG1.classList.remove("active");
   bG2.classList.remove("active");
   changeBg();
+  activeBg();
 });
